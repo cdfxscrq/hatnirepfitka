@@ -43,7 +43,7 @@ def _watch(bot: Client, update: Message, args: list, isTar=False):
 
 @Client.on_message(
     filters.command(BotCommands.WatchCommand) &
-    +    filters.chat(AUTHORIZED_CHATS)
+    filters.chat(AUTHORIZED_CHATS)
 )
 def watch(client: Client, message: Message):
     args = [" ".join(message.command[1:])]
@@ -52,7 +52,7 @@ def watch(client: Client, message: Message):
 
 @Client.on_message(
     filters.command(BotCommands.TarWatchCommand) &
-         filters.chat(AUTHORIZED_CHATS)
+    filters.chat(AUTHORIZED_CHATS)
 )
 def watchTar(client: Client, message: Message):
     args = [" ".join(message.command[1:])]
