@@ -75,9 +75,9 @@ class TelegramDownloadHelper(DownloadHelper):
 
     def __download(self, message, path):
         download = message.download(
-                                                              progress=self.__onDownloadProgress,
-                                                              file_name=path
-                                                          )
+                                progress=self.__onDownloadProgress,
+                                file_name=path
+                           )
         if download is not None:
             self.__onDownloadComplete()
         else:
@@ -85,9 +85,9 @@ class TelegramDownloadHelper(DownloadHelper):
                 self.__onDownloadError('Internal error occurred')
 
     _message = self.__user_bot.get_messages(
-                    message.chat.id,
-                    message.message_id
-                )
+            message.chat.id,
+            message.message_id
+        )
         media = None
         media_array = [_message.document, _message.video, _message.audio]
         for i in media_array:
